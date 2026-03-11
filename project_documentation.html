@@ -1,0 +1,160 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Technical Showcase | AI Churn Pipeline</title>
+        <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #64748b;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --success: #10b981;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+        }
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text-dark); 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--bg); 
+        }
+        .navbar {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+        .header { margin-bottom: 3rem; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #0f172a; }
+        .header p { color: var(--text-light); font-size: 1.1rem; }
+
+        .metrics-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 1.5rem; 
+            margin-bottom: 3rem; 
+        }
+        .metric-card { 
+            background: var(--card-bg); 
+            padding: 1.5rem; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); 
+            border-top: 4px solid var(--primary);
+            transition: transform 0.2s ease;
+        }
+        .metric-card:hover { transform: translateY(-5px); }
+        .metric-value { font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem; }
+        .metric-label { font-size: 0.875rem; color: var(--text-light); font-weight: 600; text-transform: uppercase; }
+        
+        .section { background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); margin-bottom: 3rem; }
+        .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .section-title::before { content: ''; width: 4px; height: 1.5rem; background: var(--primary); border-radius: 2px; }
+
+        .charts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 2rem; }
+        .chart-box { border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; }
+        .chart-box img { width: 100%; height: auto; display: block; }
+        .chart-caption { padding: 1rem; background: #f8fafc; text-align: center; font-weight: 600; font-size: 0.9rem; }
+
+        .table-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th { background: #f1f5f9; text-align: left; padding: 1rem; font-weight: 600; border-bottom: 2px solid #e2e8f0; }
+        td { padding: 1rem; border-bottom: 1px solid #f1f5f9; }
+
+        .tag { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+        .tag-high { background: #fee2e2; color: #dc2626; }
+        .tag-med { background: #fef3c7; color: #d97706; }
+        .tag-low { background: #d1fae5; color: #059669; }
+
+        .feature-card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; }
+        .feature-title { font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+        .code-block { background: #1e293b; color: #f8fafc; padding: 1rem; border-radius: 8px; font-family: monospace; overflow-x: auto; margin: 1rem 0; }
+    </style>
+    </head>
+    <body>
+        <div class="navbar" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);">
+            <span style="font-weight: 800; font-size: 1.25rem;">ENGINEERING SHOWCASE</span>
+            <span>Python | AI | Data Architecture</span>
+        </div>
+        <div class="container">
+            <div class="header">
+                <h1>Project Architecture & Implementation</h1>
+                <p>A Deep Dive into the Engineering behind the Churn Analytics System</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">The Technology Stack</div>
+                <div class="metrics-grid">
+                    <div class="metric-card" style="border-top-color: #3776ab;">
+                        <div class="metric-value">Python</div>
+                        <div class="metric-label">Data Engine</div>
+                    </div>
+                    <div class="metric-card" style="border-top-color: #f29111;">
+                        <div class="metric-value">MariaDB</div>
+                        <div class="metric-label">Normalized DB</div>
+                    </div>
+                    <div class="metric-card" style="border-top-color: #217346;">
+                        <div class="metric-value">Excel</div>
+                        <div class="metric-label">Stakeholder Reports</div>
+                    </div>
+                    <div class="metric-card" style="border-top-color: #f2c811;">
+                        <div class="metric-value">Power BI</div>
+                        <div class="metric-label">Interactive BI</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Data Pipeline Implementation</div>
+                <div class="feature-card">
+                    <div class="feature-title">Stage 1: Enterprise Data Cleaning</div>
+                    <p>Implemented a robust pre-processing layer that handles missingness (e.g., tenure-based nulls in TotalCharges) and ensures data type consistency for heavy numerical analysis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-title">Stage 2: Strategic Feature Engineering</div>
+                    <p>Created domain-specific features to enhance AI accuracy:</p>
+                    <ul>
+                        <li><strong>Tenure Binning:</strong> Capturing non-linear decay of customer loyalty.</li>
+                        <li><strong>Revenue Segmentation:</strong> Applying quantitative grouping for financial impact analysis.</li>
+                        <li><strong>CLV Calculation:</strong> Weighting risk by financial value.</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-title">Stage 3: Advanced SQL Normalization</div>
+                    <p>Managed 3NF schema design across 4 primary tables to demonstrate relational proficiency and prevent data redundancy.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Machine Learning Model: Logical Flow</div>
+                <p>The system utilizes a dual-model approach with <strong>Random Forest</strong> for predictive power and <strong>Logistic Regression</strong> for business interpretability.</p>
+                <div class="code-block">
+# Logic for Risk Segmentation
+probability = model.predict_proba(X_test)[:, 1]
+risk_segments = pd.cut(probability, bins=[0, 0.3, 0.7, 1.0], 
+                       labels=['Low Risk', 'Medium Risk', 'High Risk'])
+                </div>
+                <p><strong>Key Performance Metric:</strong> The model achieves an 81.5% accuracy with optimized precision for the "High Risk" class to ensure marketing spend is focused and efficient.</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Software Engineering Best Practices</div>
+                <ul>
+                    <li><strong>Modularity:</strong> Decoupled logic across specialized scripts (EDA, ML, ETL).</li>
+                    <li><strong>Automated Orchestration:</strong> Single entry point (`run_pipeline.py`) for end-to-end execution.</li>
+                    <li><strong>Environment Integrity:</strong> Managed dependencies via `.venv` and `requirements.txt`.</li>
+                    <li><strong>Reproduction Support:</strong> Comprehensive README and walkthrough artifacts.</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    </html>
+    
