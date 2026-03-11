@@ -1,103 +1,184 @@
-# 📊 Customer Churn Analytics System
+# 🚀 AI-Powered Customer Churn Analytics System
 
-[![Python](https://img.shields.io/badge/Python-3.9+-3776ab?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)](https://mariadb.org)
-[![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org)
-[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
+<p align="center">
+<img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=28&duration=3500&pause=1000&color=00C2FF&center=true&vCenter=true&width=700&lines=AI+Customer+Churn+Prediction;Revenue+Risk+Intelligence+System;Machine+Learning+Analytics+Pipeline" />
+</p>
 
-An end-to-end, enterprise-grade analytical system designed to predict and mitigate customer churn. This project demonstrates a complete data lifecycle—from raw ingestion and SQL normalization to AI-driven risk segmentation and executive dashboarding.
-
----
-
-## 🚀 Executive Dashboards (Visual Showcase)
-
-### 1. Business Intelligence Dashboard
-*A high-impact interface for stakeholders, focusing on Revenue at Risk and strategic recovery.*
-![Analysis Dashboard](docs/screenshots/analysis_dashboard.png)
-
-### 2. Technical Engineering Showcase
-*Detailed documentation for technical interviewers, highlighting the ML pipeline and data architecture.*
-![Technical Showcase](docs/screenshots/technical_showcase.png)
+<p align="center">
+<img src="https://img.shields.io/badge/Python-3.9+-3776ab?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white" />
+<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
+<img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
+</p>
 
 ---
 
-## 💡 Why This Project Stands Out
+## 📊 Project Overview
 
-- **Metric-Driven Outcomes**: Identifies over **$103k in monthly revenue at high risk**, providing a direct ROI-focused business case.
-- **AI-Driven Action Plan**: Prioritizes the customer base into High, Medium, and Low risk segments.
-- **Modular Data Engineering**: Built with a "Clean Architecture" approach, separating concerns into ETL, Inference, and Reporting.
-- **Full-Stack Proficiency**: Spans the entire stack from Python/SQL to HTML/CSS Design and Power BI planning.
+An **end‑to‑end AI analytics platform** designed to detect customers likely to churn and estimate the **revenue at risk**.
+The system processes raw data, performs feature engineering, trains a machine learning model, and generates automated business intelligence reports.
+
+This project demonstrates **real industry workflow**:
+
+* Data Cleaning & Feature Engineering
+* SQL Database Architecture
+* Machine Learning Prediction
+* Automated Business Reporting
 
 ---
 
-## 🛠 Project Architecture & Implementation
+## ✨ Live Visual Showcase
 
-The system follows a 4-stage automated pipeline:
+### 📈 Business Intelligence Dashboard
 
-### 1. Data Ingestion & Cleaning (`data_cleaning.py`)
-Implemented robust preprocessing to handle real-world data issues.
+![Dashboard](docs/screenshots/analysis_dashboard.png)
+
+Provides a **management‑level overview** including:
+
+* Revenue at Risk
+* Customer Risk Segments
+* Strategic retention targets
+
+---
+
+### ⚙️ Technical Engineering Overview
+
+![Technical](docs/screenshots/technical_showcase.png)
+
+Designed for **technical evaluation and interviews**:
+
+* ML pipeline visualization
+* Feature engineering logic
+* Data architecture explanation
+
+---
+
+## 💡 Key Highlights
+
+| Capability                | Description                                                       |
+| ------------------------- | ----------------------------------------------------------------- |
+| 💰 Revenue Risk Detection | Identifies customers contributing to **$100k+ revenue at risk**   |
+| 🤖 AI Risk Prediction     | Random Forest model predicts churn probability                    |
+| 📊 Risk Segmentation      | Automatically categorizes users into **Low / Medium / High risk** |
+| ⚙️ Automated Pipeline     | End‑to‑end execution with a single command                        |
+| 📑 Executive Reports      | Auto‑generated Excel and HTML dashboards                          |
+
+---
+
+## 🧠 Machine Learning Pipeline
+
+### 1️⃣ Data Cleaning & Feature Engineering
+
 ```python
-# Strategic Feature Engineering Example
-df['tenure_group'] = pd.cut(df['tenure'], bins=[0, 12, 24, 48, 72], 
-                            labels=['0-1yr', '1-2yr', '2-4yr', '4-6yr'])
+# Feature Engineering
+
+df['tenure_group'] = pd.cut(
+    df['tenure'],
+    bins=[0,12,24,48,72],
+    labels=['0-1yr','1-2yr','2-4yr','4-6yr']
+)
+
+# Customer Lifetime Value
+
 df['customer_lifetime_value'] = df['MonthlyCharges'] * df['tenure']
 ```
 
-### 2. Normalized Database Design (`create_tables.sql`)
-Demonstrates database proficiency through a 3NF normalized schema across four primary tables.
+---
 
-### 3. AI Predictive Modeling (`churn_prediction.py`)
-Utilizes a Random Forest classifier to predict churn probability.
+### 2️⃣ Database Architecture
+
+Normalized **3NF schema** implemented using MariaDB for scalable analytics.
+
+Key Tables:
+
+* customers
+* services
+* billing
+* churn_predictions
+
+---
+
+### 3️⃣ AI Churn Prediction
+
 ```python
-# Churn Risk Segmentation Logic
-probability = model.predict_proba(X_test)[:, 1]
-segments = pd.cut(probability, bins=[0, 0.3, 0.7, 1.0], 
-                 labels=['Low Risk', 'Medium Risk', 'High Risk'])
+probability = model.predict_proba(X_test)[:,1]
+
+segments = pd.cut(
+    probability,
+    bins=[0,0.3,0.7,1.0],
+    labels=['Low Risk','Medium Risk','High Risk']
+)
 ```
 
-### 4. Professional Reporting Suite (`export_reports.py`)
-Automates multi-sheet Excel workbooks and Power BI ready datasets for business stakeholders.
+The model estimates **probability of churn for each customer** and assigns a risk category.
 
 ---
 
-## ⚙️ How to Run the Project
+### 4️⃣ Automated Reporting
 
-### Prerequisites
-- Python 3.9+
-- MariaDB (Optional for the pipeline, required for the DB export stage)
+The system generates:
 
-### Quick Setup
-
-1. **Activate Environment**:
-   ```bash
-   source .venv/bin/activate
-   ```
-
-2. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Execute the Master Pipeline**:
-   ```bash
-   python run_pipeline.py
-   ```
-
-### 🖥 The "WOW" Factor
-Upon completion, the script will **automatically launch two premium HTML reports** in your browser, providing an instant visual overview of your results.
+* Multi‑sheet Excel reports
+* Power BI compatible datasets
+* Interactive HTML dashboards
 
 ---
 
-## 📁 Repository Structure
-```text
-Customer_Churn_Analytics/
-├── data/               # Raw and Processed Datasets
-├── database/           # SQL Scripts & DB Ingestion
-├── python_analysis/    # Modular Python Scripts
-├── excel_reports/      # Automated Business Workbooks
-├── docs/               # Visuals, Insights, & Guides
-├── run_pipeline.py     # Master Pipeline Orchestrator
-└── README.md           # Project Documentation
+## ⚙️ Run the Project
+
+### 1️⃣ Activate Virtual Environment
+
+```bash
+source .venv/bin/activate
 ```
 
-This project is created by Sabarna Jana| Customer Churn Analytics System
+### 2️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3️⃣ Execute Full Pipeline
+
+```bash
+python run_pipeline.py
+```
+
+---
+
+## 🖥 Output Experience
+
+After execution the system automatically opens:
+
+* 📊 Business Analytics Dashboard
+* ⚙️ Technical ML Architecture View
+
+These provide an **instant visual understanding of churn risk insights**.
+
+---
+
+## 📂 Project Structure
+
+```
+Customer_Churn_Analytics
+
+├── data
+├── database
+├── python_analysis
+├── excel_reports
+├── docs
+├── run_pipeline.py
+└── README.md
+```
+
+---
+
+## 👨‍💻 Author
+
+**Sabarna Jana**
+AI & Data Science Enthusiast
+MCA (Artificial Intelligence)
+
+---
+
+⭐ If you like this project, consider giving it a star on GitHub.
