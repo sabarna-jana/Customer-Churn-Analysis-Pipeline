@@ -100,13 +100,4 @@ Customer_Churn_Analytics/
 └── README.md           # Project Documentation
 ```
 
----
-
-## 🏆 Interview Talking Points
-*   **Predictive Revenue Recovery**: "The system predicts $103k in at-risk revenue monthly."
-*   **Customer Lifecycle Insight**: "Identified that Month-to-Month contracts have a 40%+ churn rate, leading to a recommendation for annual plan incentives."
-*   **Full-Stack Visibility**: "Managed everything from raw CSV cleaning to premium HTML dashboard design."
-
----
-
-Prepared by Senior Data Analyst | Customer Churn Analytics System
+This project is created by Sabarna Jana| Customer Churn Analytics System
